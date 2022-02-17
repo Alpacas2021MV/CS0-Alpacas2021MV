@@ -13,7 +13,10 @@ name= input("Please enter your name:")
 
 #Step 2: 
 print("Hello,", name)
+import time 
+print(time.sleep(2))
 input("The hangman game is under construction, maybe you’ll get to play it in a few weeks...")
 input("This is what various stages of the hangman game will look like…")
 
 #Step 3: 
+print()
