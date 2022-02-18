@@ -20,7 +20,7 @@ input("The hangman game is under construction, maybe you’ll get to play it in 
 input("This is what various stages of the hangman game will look like…")
 
 #Step 3: 
-print("This is Stage 0")
+print("This is Stage 0:")
 
 print("|__________") 						
 print("|/    |") 
@@ -32,7 +32,7 @@ print("|")
 print("-------------") 
 
 #Step 4: 
-print("This is stage 1")
+print("This is stage 1:")
 
 print("|__________")
 print("|/    |")
@@ -42,3 +42,16 @@ print("|")
 print("|")
 print("|")
 print("------------")
+
+#4a 
+print("This is Stage 2:")
+print("|__________")
+print("|/    |")
+print("|     O")
+print("|     |")
+print("|")
+print("|")
+print("|")
+print("-------------")
+
+#4b
