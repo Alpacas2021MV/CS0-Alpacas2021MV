@@ -18,10 +18,10 @@ import time
 print(time.sleep(2))
 input("The hangman game is under construction, maybe you’ll get to play it in a few weeks...")
 input("This is what various stages of the hangman game will look like…")
-print(time.sleep(2))
 
 #Step 3: 
 print("This is Stage 0")
+
 print("|__________") 						
 print("|/    |") 
 print("|") 	
@@ -32,3 +32,13 @@ print("|")
 print("-------------") 
 
 #Step 4: 
+print("This is stage 1")
+
+print("|__________")
+print("|/    |")
+print("|     O")
+print("|")
+print("|")
+print("|")
+print("|")
+print("------------")
