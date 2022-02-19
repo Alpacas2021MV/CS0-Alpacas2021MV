@@ -66,3 +66,27 @@ print("|")
 print("|")
 print("|")
 print("-------------")
+
+#4c 
+print("This is Stage 4")
+
+print("|__________")
+print("|/    |")
+print("|     O")
+print("|    \|/")
+print("|")
+print("|")
+print("|")
+print("-------------")
+
+#4d
+print("This is Stage 5")
+
+print("|__________")
+print("|/    |")
+print("|     O")
+print("|    \|/")
+print("|     |")
+print("|    /")
+print("|")
+print("-------------")
