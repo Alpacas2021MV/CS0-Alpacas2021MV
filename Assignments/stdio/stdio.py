@@ -45,6 +45,7 @@ print("------------")
 
 #4a 
 print("This is Stage 2:")
+
 print("|__________")
 print("|/    |")
 print("|     O")
@@ -55,3 +56,13 @@ print("|")
 print("-------------")
 
 #4b
+print("This is Stage 3:")
+
+print("|__________")
+print("|/    |")
+print("|     O")
+print("|    \|")
+print("|")
+print("|")
+print("|")
+print("-------------")
