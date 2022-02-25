@@ -11,27 +11,29 @@ and convert that to HH:MM:SS
 #Step 2b: convert remianing seconds to minutes
 #Step 3: print out HH:MM::SS from inputed seconds
 '''
-#Step 2a
-def convert_seconds_to_hours(seconds): 
-    hours = seconds // 3600
-    return hours
+#Step 2
 
-#Step 2b
-def convert_seconds_to_minutes(seconds): 
-    #print(f"DEBUG: seconds = {seconds}")
-    minutes = seconds // 60
-    return minutes
+def convert_seconds_time(seconds):
+    hours = seconds //3600
+    rem_seconds = seconds - (hours * 3600)
+    minutes = rem_seconds//60
+    rem_seconds = rem_seconds%60
+    return hours, minutes, rem_seconds
+
+def tests(): 
+    assert convert_seconds_time(3661) == (1, 1, 1)
+    assert convert_seconds_time (5280) == (1, 28, 0)
+    print(f"All test cases passed")
 
 def main(): 
+    tests()
     #Step 1
     seconds = int(input("Please enter the number of seconds: "))
 
     #Step 2
-    hours = convert_seconds_to_hours(seconds)
-    minutes = convert_seconds_to_minutes(seconds - (hours * 3600))
+    hours, minutes, rem_seconds = convert_seconds_time(seconds)
 
     #3661 seconds = 01:01:01 / 1:1:1
     print(f"The time format of {seconds} seconds is: {hours}:{minutes}:{seconds%60}")
-    pass
 
 main()
