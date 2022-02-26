@@ -13,6 +13,7 @@ Then, it should print on the screen the area and perimeter
 #Step 4: Calculate the area 
 #Step 5: print out area and perimeter
 '''
+
 #Step 1 
 a = int(input("Please enter the length of the first side (a): "))
 b = int(input("Please enter the length of the second side (b): "))
@@ -20,14 +21,21 @@ c = int(input("Please enter the length of the third side (c): "))
 
 #Step 2 
 #Got confused on this part, I found this code from here (Hopefully this counts as a citation)
-# https://www.codesansar.com/python-programming-examples/check-triangle-types-sides.htm
+# https://tutorialspoint.dev/algorithm/geometric-algorithms/check-whether-triangle-valid-not-sides-given
 
-def is_valid_triangle(a, b, c):
-    if a+b>=c and b+c>=a and c+a>=b:
-        return True    
-    else: 
+def check_Validity(a, b, c): 
+    '''
+    This functions checks to see if the inputed lengths actually form a triangle
+    '''
+    if (a + b <= c) or (a + c <= b) or (b + c <= a):
         return False
+    else: 
+        return True    
 
+if check_Validity(a, b, c): 
+    print("Triangle is Valid")
+else: 
+    print("Triangle is Invalid")
 
 #Step 3
 perimeter = a + b + c 
@@ -44,4 +52,4 @@ print("The perimeter of this triangle with the lengths of", a, ",", b, "and", c,
 "would be: ", perimeter)
 
 print("The area of this triangle with the lengths of", a, ",", b, "and", c, 
-"would be: ", area)
+"would be: ", area) 
