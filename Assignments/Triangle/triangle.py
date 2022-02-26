@@ -31,3 +31,8 @@ s = perimeter // 2
 area = (s * (s - a) * (s - b) * (s - c))** 0.5
 
 #Step 4 
+print("The perimeter of this triangle with the lengths of", a, ",", b, "and", c, 
+"would be: ", perimeter)
+
+print("The area of this triangle with the lengths of", a, ",", b, "and", c, 
+"would be: ", area)
