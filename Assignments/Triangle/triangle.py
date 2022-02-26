@@ -21,6 +21,13 @@ c = int(input("Please enter the length of the third side (c): "))
 #Step 2
 perimeter = a + b + c 
 
+#Step 2a
+'''
+"s" is semi-perimeter
+'''
+s = perimeter // 2
+
 #Step 3 
+area = (s * (s - a) * (s - b) * (s - c))** 0.5
 
 #Step 4 
