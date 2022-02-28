@@ -4,7 +4,8 @@ Date: 02/28/22
 
 This program will ask the user to input three sides of 
 a triangle and will calculate the area and perimeter of the sides. 
-Then, it should print on the screen the area and perimeter 
+Then, it should print on the screen the area and perimeter. This program 
+will also check the validity of the length inputed. 
 
 #Step 1: Prompt user to input three numbers (the three sides of the triangle hopefully)
 #Step 2: Test to see if lengths given actually make a triangle  
@@ -42,7 +43,7 @@ perimeter = a + b + c
 
 #Step 3a
 #"s" is the semi-perimeter
-s = perimeter // 2
+s = perimeter / 2
 
 #Step 4 
 area = (s * (s - a) * (s - b) * (s - c))** 0.5
