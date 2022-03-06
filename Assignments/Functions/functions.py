@@ -16,3 +16,44 @@ Step 9: Call all functions and display answers with descriptions
 Step 10: Write a test function that to automatically test each function
 Bonus step: Write function that finds the larger of the two numbers
 '''
+
+#Step 1
+num1 = input("Please enter the first number: ")
+num2 = input("Please enter the second number: ")
+
+#Step 2
+def add(): 
+    pass
+
+#Step 3 
+def multi():
+    pass
+
+#Step 4
+def divide():
+    pass
+
+#Step 5
+def subtract():
+    pass
+
+#Step 6 
+def remind():
+    pass
+
+#Step 7 
+def power():
+    pass
+
+#Step 8
+def sqrt():
+    pass
+
+#Step 9 
+'''
+This function will call all the ones above
+'''
+def main (): 
+    pass
+
+main()
