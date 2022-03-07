@@ -18,24 +18,28 @@ Bonus step: Write function that finds the larger of the two numbers
 '''
 
 #Step 1
-num1 = input("Please enter the first number: ")
-num2 = input("Please enter the second number: ")
+num1 = int(input("Please enter the first number: "))
+num2 = int(input("Please enter the second number: "))
 
 #Step 2
 def add(): 
-    pass
+    add_ans = num1 + num2
+    return add_ans
 
 #Step 3 
 def multi():
-    pass
+    mul_nums = num1 * num2
+    return mul_nums
 
 #Step 4
 def divide():
-    pass
+    div_nums = num1 // num2
+    return div_nums
 
 #Step 5
 def subtract():
-    pass
+    sub_num = num2 - num1 
+    return sub_num
 
 #Step 6 
 def remind():
@@ -43,6 +47,7 @@ def remind():
 
 #Step 7 
 def power():
+    pow_num = num1 ** num2
     pass
 
 #Step 8
@@ -51,9 +56,10 @@ def sqrt():
 
 #Step 9 
 '''
-This function will call all the ones above
+This function will call all the ones above and display answers
 '''
-def main (): 
-    pass
+def main():
+    print(f"The sum of {num1} and {num2} is" )
+    
 
 main()
