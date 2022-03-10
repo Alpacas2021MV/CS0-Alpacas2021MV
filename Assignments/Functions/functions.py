@@ -28,7 +28,7 @@ def multi(num1, num2):
 
 #Step 3
 def divide(num1, num2):
-    div_nums = num1 // num2
+    div_nums = num2 // num1
     return div_nums
 
 #Step 4
@@ -38,7 +38,7 @@ def subtract(num1, num2):
 
 #Step 5 
 def remind(num1, num2):
-    rem = num1%num2
+    rem = num2%num1
     return rem
 
 #Step 6 
@@ -62,11 +62,11 @@ def main():
     
     print(f"The product of {num1} and {num2} is {multi(num1, num2)}")
     
-    print(f"The quotient of {num1} and {num2} is {divide(num1, num2)}")
+    print(f"The quotient of {num2} and {num1} is {divide(num1, num2)}")
     
     print(f"The difference of {num2} and {num1} is {subtract(num1, num2)}")
     
-    print(f"The reminder between {num1} and {num2} is {remind(num1, num2)}")
+    print(f"The reminder between {num2} and {num1} is {remind(num1, num2)}")
     
     print(f"The value of {num1} to the power of {num2} is {power(num1, num2)}")
     
@@ -80,14 +80,14 @@ def tests():
     assert multi(5, 7) == (35)
     assert multi(2, 6) == (12)
 
-    assert divide(6, 2) == (3)
-    assert divide(24, 3) == (8)
+    assert divide(2, 6) == (3)
+    assert divide(3, 24) == (8)
 
-    assert subtract(10, 5) == (5)
-    assert subtract(28, 16) == (12)
+    assert subtract(5, 10) == (5)
+    assert subtract(16, 28) == (12)
 
-    assert remind(32, 3) == (2)
-    assert remind(78, 8) == (6)
+    assert remind(3, 32) == (2)
+    assert remind(8, 78) == (6)
 
     assert power(4, 3) == (64) 
     assert power(7, 6) == (117649)
