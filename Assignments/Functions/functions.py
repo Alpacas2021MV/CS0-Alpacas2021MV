@@ -16,7 +16,6 @@ Step 9: Call all functions and display answers with descriptions
 Step 10: Write a test function that to automatically test each function
 Bonus step: Write function that finds the larger of the two numbers
 '''
-import time
 #Step 1
 def add(num1, num2): 
     add_ans = num1 + num2
@@ -54,22 +53,47 @@ def sqrt(num1):
 
 #Step 8 
 def main():
+    tests()
     num1 = int(input("Please enter the first number: "))
     num2 = int(input("Please enter the second number: "))
 
-#Step 8
+#Step 9
     print(f"The sum of {num1} and {num2} is {add(num1, num2)}")
-    time.sleep(1)
+    
     print(f"The product of {num1} and {num2} is {multi(num1, num2)}")
-    time.sleep(1)
+    
     print(f"The quotient of {num1} and {num2} is {divide(num1, num2)}")
-    time.sleep(1)
-    print(f"The difference of {num1} and {num2} is {subtract(num1, num2)}")
-    time.sleep(1)
+    
+    print(f"The difference of {num2} and {num1} is {subtract(num1, num2)}")
+    
     print(f"The reminder between {num1} and {num2} is {remind(num1, num2)}")
-    time.sleep(1)
+    
     print(f"The value of {num1} to the power of {num2} is {power(num1, num2)}")
-    time.sleep(1)
+    
     print(f"The square root of {num1} is {sqrt(num1)}")
+
+#Step 10
+def tests():
+    assert add(5, 7) == (12)
+    assert add(2, 6) == (8)
+
+    assert multi(5, 7) == (35)
+    assert multi(2, 6) == (12)
+
+    assert divide(6, 2) == (3)
+    assert divide(24, 3) == (8)
+
+    assert subtract(10, 5) == (5)
+    assert subtract(28, 16) == (12)
+
+    assert remind(32, 3) == (2)
+    assert remind(78, 8) == (6)
+
+    assert power(4, 3) == (64) 
+    assert power(7, 6) == (117649)
+
+    assert sqrt(64) == (8.0)
+    assert sqrt (144) == (12.0) 
+    print("All test cases passed")
 
 main()
