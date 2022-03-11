@@ -51,6 +51,11 @@ def sqrt(num1):
     sq = num1 ** 0.5
     return sq
 
+# Bonus Step 
+def large(num1, num2): 
+    lar = max(num1, num2)
+    return lar
+
 #Step 8 
 def main():
     tests()
@@ -71,6 +76,8 @@ def main():
     print(f"The value of {num1} to the power of {num2} is {power(num1, num2)}")
     
     print(f"The square root of {num1} is {sqrt(num1)}")
+
+    print(f"The larger number between {num1} and {num2} is {large(num1, num2)}")
 
 #Step 10
 def tests():
@@ -94,6 +101,9 @@ def tests():
 
     assert sqrt(64) == (8.0)
     assert sqrt (144) == (12.0) 
+
+    assert large(23, 8) == (23)
+    assert large(46, 32) == (46)
     print("All test cases passed")
 
 main()
