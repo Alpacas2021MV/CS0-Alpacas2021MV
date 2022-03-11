@@ -102,8 +102,8 @@ def tests():
     assert sqrt(64) == (8.0)
     assert sqrt (144) == (12.0) 
 
-    assert large(23, 8) == (23)
-    assert large(46, 32) == (46)
+    assert large(23, 8) == 23
+    assert large(46, 32) == 46
     print("All test cases passed")
 
 main()
