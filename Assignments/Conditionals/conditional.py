@@ -13,3 +13,25 @@ Step 6: Write test function and do test cases for all the previous functions
 Step 6: Prompt user for five numbers
 Step 7: Call functions and display the answers
 '''
+def sum(): 
+    pass 
+
+def product():
+    pass
+
+def average():
+    pass
+
+def max():
+    pass
+
+def min():
+    pass 
+
+def tests():
+    pass
+
+def main(): 
+    pass 
+
+main()
