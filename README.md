@@ -17,3 +17,5 @@
 - All requirements are met and completed 
 - Program has been tested many times 
 - Grade 110/100 because I met all the requirements outlined and I tested the program multiple times using the calculator from Anaconda to verify that the math is correct. I also completed the bonus step and the test cases are all working properly as well. 
+- Here is the screenshot
+-![Screenshot (24)](https://user-images.githubusercontent.com/98496814/157802476-8c50469a-3021-46e9-9c50-3fb11cda7932.png)
