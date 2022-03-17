@@ -19,11 +19,13 @@ def sum_nums(num1, num2, num3, num4, num5):
     return sum
 
 #Step 2
-def product():
-    pass
+def product(num1, num2, num3, num4, num5):
+    multi = num1 * num2 * num3 * num4 * num5
+    return multi
 
 #Step 3
 def average():
+    #aver = sum // 5
     pass
 
 #Step 4
@@ -36,7 +38,9 @@ def min():
 
 #Step 6
 def tests():
-    pass
+    assert sum_nums(2 + 3 + 5 + 6 + 1) == 17
+    assert sum_nums(1 + 2 + 3 + 4 + 5) == 15
+    print("All test cases passed")
 
 #Step 7
 def prompt_nums(): 
@@ -50,6 +54,8 @@ def prompt_nums():
 
 #Step 8
 def main():
-    num1, num2, num3, num4, num5 = prompt_nums()
+    tests()
 
+    num1, num2, num3, num4, num5 = prompt_nums()
+    print(f"The sum of {num1}, {num2}, {num3}, {num4} and {num5} is {sum_nums(num1, num2, num3, num4, num5)}")
 main()
