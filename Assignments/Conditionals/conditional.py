@@ -31,7 +31,14 @@ def average(num1, num2, num3, num4, num5):
 
 #Step 4
 def maxi(num1, num2, num3, num4, num5):
-    pass
+    #I got this code from this website. I spend so much time trying to figure this out, so I needed help
+    #https://www.codegrepper.com/code-examples/python/how+to+find+largest+number+in+list+python+without+max
+    numbers = [num1, num2, num3, num4, num5]
+    highest_number = 0
+    for number in numbers:
+        if number > highest_number: 
+            highest_number = number
+    return number
 
 #Step 5
 def mini():
@@ -71,5 +78,7 @@ def main():
     print(f"The average of {num1}, {num2}, {num3}, {num4} and {num5} is {average(num1, num2, num3, num4, num5)}")
 
     print(f"The maximum value of {num1}, {num2}, {num3}, {num4} and {num5} is {maxi(num1, num2, num3, num4, num5)}")
+
+    #print(f"The minimum value of {num1}, {num2}, {num3}, {num4} and {num5} is {mini(num1, num2, num3, num4, num5)}")
 
 main()
