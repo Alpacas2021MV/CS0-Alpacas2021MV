@@ -44,7 +44,7 @@ def maxi(num1, num2, num3, num4, num5):
 def mini(num1, num2, num3, num4, num5):
     numbers = num1, num2, num3, num4, num5
     min_value = numbers[0]
-    for number in numbers[-1:]:
+    for number in numbers[0:]:
         if number < min_value:
             min_value = number
     return min_value
@@ -91,5 +91,18 @@ def main():
     print(f"The maximum value of {num1}, {num2}, {num3}, {num4} and {num5} is {maxi(num1, num2, num3, num4, num5)}")
 
     print(f"The minimum value of {num1}, {num2}, {num3}, {num4} and {num5} is {mini(num1, num2, num3, num4, num5)}")
+
+    #Bonus Step
+    KeepRunning = True
+    counter = 0
+    while(KeepRunning):
+        print(counter)
+        counter += 1
+        runagain = input("Do you want to keep putting in numbers? [Y/N]? ")
+        if (runagain.lower() == 'y' or runagain.lower() == 'yes'):
+            print("Ok, let's go again")
+        else:
+            print("Thank you, Goodbye")
+            KeepRunning = False
 
 main()
