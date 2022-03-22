@@ -31,18 +31,23 @@ def average(num1, num2, num3, num4, num5):
 
 #Step 4
 def maxi(num1, num2, num3, num4, num5):
-    #I got this code from this website. I spend so much time trying to figure this out, so I needed help
-    #https://www.codegrepper.com/code-examples/python/how+to+find+largest+number+in+list+python+without+max
-    numbers = [num1, num2, num3, num4, num5]
-    highest_number = 0
-    for number in numbers:
-        if number > highest_number: 
-            highest_number = number
-    return number
+    #I couldn't figure out this part of the assignment. I got this code from 
+    #https://medium.com/@gregor.v.dulong/how-to-find-the-largest-number-in-a-list-without-max-function-in-python-33f5593798af
+    numbers = num1, num2, num3, num4, num5
+    max_value = numbers[0]
+    for number in numbers[1:]:
+        if number > max_value:
+            max_value = number
+    return max_value
 
 #Step 5
-def mini():
-    pass 
+def mini(num1, num2, num3, num4, num5):
+    numbers = num1, num2, num3, num4, num5
+    min_value = numbers[0]
+    for number in numbers[-1:]:
+        if number < min_value:
+            min_value = number
+    return min_value
 
 #Step 6
 def tests():
@@ -54,6 +59,12 @@ def tests():
 
     assert average(1, 2, 3, 4, 5) == 3
     assert average(2, 3, 4, 5, 6) == 4
+
+    assert maxi(1, 2, 3, 4, 5) == 5
+    assert maxi(2, 3, 4, 5, 6) == 6
+
+    assert mini(1, 2, 3, 4, 5) == 1
+    assert mini(2, 3, 4, 5, 6) == 2
     print("All test cases passed")
 
 #Step 7
@@ -79,6 +90,6 @@ def main():
 
     print(f"The maximum value of {num1}, {num2}, {num3}, {num4} and {num5} is {maxi(num1, num2, num3, num4, num5)}")
 
-    #print(f"The minimum value of {num1}, {num2}, {num3}, {num4} and {num5} is {mini(num1, num2, num3, num4, num5)}")
+    print(f"The minimum value of {num1}, {num2}, {num3}, {num4} and {num5} is {mini(num1, num2, num3, num4, num5)}")
 
 main()
