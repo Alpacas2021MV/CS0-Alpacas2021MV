@@ -92,17 +92,18 @@ def main():
 
     print(f"The minimum value of {num1}, {num2}, {num3}, {num4} and {num5} is {mini(num1, num2, num3, num4, num5)}")
 
-    #Bonus Step
+    RunAgain()
+
+def RunAgain():
+#Bonus Step
     KeepRunning = True
-    counter = 0
     while(KeepRunning):
-        print(counter)
-        counter += 1
         runagain = input("Do you want to keep putting in numbers? [Y/N]? ")
         if (runagain.lower() == 'y' or runagain.lower() == 'yes'):
             print("Ok, let's go again")
+            main()
+            break
         else:
             print("Thank you, Goodbye")
             KeepRunning = False
-
 main()
