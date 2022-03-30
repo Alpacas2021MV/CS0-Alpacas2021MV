@@ -15,3 +15,16 @@ Step 5: At the end of the game, reveal what the secret number was.
 Step 6: Ask if player wants to play again
 Step 7: Once player quits, display their stats with how many games were played with number of wins and losses. 
 '''
+#Step 1
+def prompt_name():
+    print("Welcome to -- Guess the Number -- The Game! ")
+    name = input("Please enter your name: ")
+    return name
+
+def main():
+    name = prompt_name()
+    #Step 2
+    print(f"Hello {name}, I'm thinking of a number between 1 and 20.")
+    print(f"You got six attempts to guess the number.Take a guess: ")
+
+main()
