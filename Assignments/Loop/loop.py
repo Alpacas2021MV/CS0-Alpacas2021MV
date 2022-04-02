@@ -31,23 +31,23 @@ def random_number(name):
     return ran_number
 
 #Step 3
-def more_guesses(ran_number):
-    keep_guessing = True
-    while(keep_guessing):
+def more_guesses(ran_number, name):
+    for i in range(6):
         goagain = input("Take a guess: ")
-        if goagain == ran_number:
+        #Step 3a
+        if goagain != ran_number:
             print(f"You are wrong. Guess again")
+        #Step 3b 
         else:
-            print(f"You are correct")
+            print(f"Congratulations, {name}! You win!")
     return goagain 
 
-#Step 4 
-def high_or_low(): 
-    pass 
-
+#Step 6
+def run_again(): 
+    pass
 
 def main():
     name = prompt_name()
     ran_number = random_number(name)
-    more_guesses(ran_number)
+    more_guesses(ran_number, name)
 main()
