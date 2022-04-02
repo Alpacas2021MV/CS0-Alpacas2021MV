@@ -15,11 +15,17 @@ Step 5: At the end of the game, reveal what the secret number was.
 Step 6: Ask if player wants to play again
 Step 7: Once player quits, display their stats with how many games were played with number of wins and losses. 
 '''
+import random
 #Step 1
 def prompt_name():
     print("Welcome to -- Guess the Number -- The Game! ")
     name = input("Please enter your name: ")
     return name
+
+#Step 2
+def random_number():
+    ran_number = random.randint(1, 20)
+    return ran_number
 
 def main():
     name = prompt_name()
