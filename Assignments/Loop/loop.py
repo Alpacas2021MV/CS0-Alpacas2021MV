@@ -27,23 +27,32 @@ def random_number(name):
     print(f"Hello {name}, I'm thinking of a number between 1 and 20.")
     print(f"You got six attempts to guess the number.")
     ran_number = random.randint(1, 20)
-    print(f"the random number is {ran_number}!")
+    print(f"the random number is {ran_number}")
     return ran_number
 
 #Step 3
 def more_guesses(ran_number, name):
     for i in range(6):
-        goagain = input("Take a guess: ")
+        guess = input("Take a guess: ")
         #Step 3a
-        if goagain != ran_number:
-            print(f"You are wrong. Guess again")
+        if guess == ran_number:
+            print(f"Congratulations {name}! You won")
+            break
         #Step 3b 
         else:
-            print(f"Congratulations, {name}! You win!")
-    return goagain 
+            print(f"You are not correct")
+            #Step 4
+            if guess > ran_number:
+                print(f"Guess is too low. Guess again")
+            else: 
+                print(f"Guess is too high. Guess again")
+    return guess 
 
 #Step 6
 def run_again(): 
+    pass
+
+def stats(): 
     pass
 
 def main():
