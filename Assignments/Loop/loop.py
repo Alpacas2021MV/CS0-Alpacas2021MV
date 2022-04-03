@@ -47,12 +47,23 @@ def more_guesses(ran_number, name):
                 print(f"Guess is too high. Guess again")
     #Step 3b            
     if guess != ran_number:
+        #Step 5
         print(f"Game over :( , You lose. The number was {ran_number}.")
     return guess 
 
 #Step 6
-def run_again(): 
-    pass
+def run_again(ran_number, name): 
+    keeprunning = True
+    while(keeprunning):
+        runagain = input("Do you want to play again [Y/N]?")
+        if (runagain.lower() == 'y' or runagain.lower() == "yes"):
+            print("Ok, lets play again!")
+            random_number(name)
+            more_guesses(ran_number, name)
+            break
+        else:
+            print("Thank you for playing!")
+            keeprunning = False
 
 def stats(): 
     pass
@@ -61,4 +72,6 @@ def main():
     name = prompt_name()
     ran_number = random_number(name)
     more_guesses(ran_number, name)
+    run_again(ran_number, name)
+
 main()
