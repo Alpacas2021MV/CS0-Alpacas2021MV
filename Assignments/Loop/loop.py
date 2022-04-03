@@ -37,6 +37,7 @@ def more_guesses(ran_number, name):
         #Step 3a
         if guess == ran_number:
             print(f"Congratulations {name}! You won")
+            print(f"You guessed the number in {i} tries")
             break
         #Step 4
         else:
