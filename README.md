@@ -26,3 +26,10 @@
 -Program has been tested many times 
 -Grade 105/100 because I met all the requirements and I did the bonus step as well. I did have to get help from the internet on 
 the max function. 
+
+## 5 - Loop Project
+- Program plays the Guess the Number Game without the stats 
+- All requirements are met and completed 
+- Program has been tested mulitple times 
+- Grade 105/100, because I met all the requirements. I figured out half of the bonus step where the game can keep going as long 
+as the player wants. I couldn't figure out the stats after the player quits. I will try to figure it out later (obviously not for the grade) 
