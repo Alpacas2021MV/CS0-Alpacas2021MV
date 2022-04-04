@@ -35,8 +35,10 @@ def random_number():
 
 #Step 3
 def more_guesses(ran_number, name, count_wins, count_losses, num_games):
+    games = int(num_games) + 1
+    losses = int(count_losses)
+    wins = int(count_wins)
     for i in range(6):
-        games = num_games + 1
         guess = int(input("Take a guess: "))
         #Step 3a
         if guess == ran_number:
@@ -55,10 +57,11 @@ def more_guesses(ran_number, name, count_wins, count_losses, num_games):
     if guess != ran_number:
         #Step 5
         print(f"Game over :( , You lose. The number was {ran_number}.")
-        losses = count_losses + 1
+        losses = int(count_losses) + 1
+    else:
+        print("")
     return wins, losses, games
     
-
 #Step 6
 def run_again(ran_number, name, count_wins, count_losses, num_games, wins, losses, games):
     keeprunning = True
@@ -66,9 +69,9 @@ def run_again(ran_number, name, count_wins, count_losses, num_games, wins, losse
         runagain = input("Do you want to play again [Y/N]?")
         if (runagain.lower() == 'y' or runagain.lower() == "yes"):
             print("Ok, lets play again!")
-            random_number()
-            more_guesses(ran_number, name, count_wins, count_losses, num_games)
-            run_again(ran_number, name, count_wins, count_losses, num_games, wins, losses, games)
+            ran_number = random_number()
+            ran_number = more_guesses(ran_number, name, count_wins, count_losses, num_games)
+            ran_number = run_again(ran_number, name, count_wins, count_losses, num_games, wins, losses, games)
             break
         else:
             print("Thank you for playing!")
