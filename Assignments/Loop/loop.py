@@ -21,10 +21,10 @@ def prompt_name():
     print("Welcome to -- Guess the Number -- The Game! ")
     name = input("Please enter your name: ")
     print(f"Hello {name}, I'm thinking of a number between 1 and 20.")
-    count_wins = 0
-    count_losses = 0
-    num_games = 0
-    return name, count_wins, count_losses, num_games
+    #count_wins = 0
+    #count_losses = 0
+    #num_games = 0
+    return name
 
 #Step 2
 def random_number():
@@ -34,17 +34,17 @@ def random_number():
     return ran_number
 
 #Step 3
-def more_guesses(ran_number, name, count_wins, count_losses, num_games):
-    games = int(num_games) + 1
-    losses = int(count_losses)
-    wins = int(count_wins)
+def more_guesses(ran_number, name):
+    #games = num_games + 1
+    #osses = count_losses
+    #wins = count_wins
     for i in range(6):
         guess = int(input("Take a guess: "))
         #Step 3a
         if guess == ran_number:
             print(f"Congratulations {name}! You won")
             print(f"You guessed the number in {i+1} attempt(s)")
-            wins = count_wins + 1
+            #wins = count_wins + 1
             break
         #Step 4
         else:
@@ -57,36 +57,35 @@ def more_guesses(ran_number, name, count_wins, count_losses, num_games):
     if guess != ran_number:
         #Step 5
         print(f"Game over :( , You lose. The number was {ran_number}.")
-        losses = int(count_losses) + 1
+        #losses = count_losses + 1
     else:
         print("")
-    return wins, losses, games
     
 #Step 6
-def run_again(ran_number, name, count_wins, count_losses, num_games, wins, losses, games):
+def run_again(ran_number, name):
     keeprunning = True
     while(keeprunning):
         runagain = input("Do you want to play again [Y/N]?")
         if (runagain.lower() == 'y' or runagain.lower() == "yes"):
             print("Ok, lets play again!")
             ran_number = random_number()
-            ran_number = more_guesses(ran_number, name, count_wins, count_losses, num_games)
-            ran_number = run_again(ran_number, name, count_wins, count_losses, num_games, wins, losses, games)
+            more_guesses(ran_number, name)
+            run_again(ran_number, name)
             break
         else:
             print("Thank you for playing!")
-            stats(wins, losses, games)
+            #stats(wins, losses, games)
             keeprunning = False
 
 #Step 7 
-def stats(wins, losses, games): 
-    print(f"You played {games} game(s) today!")
-    print(f"You won {wins} and lost {losses}.")
+#def stats(wins, losses, games): 
+    #print(f"You played {games} game(s) today!")
+    #print(f"You won {wins} and lost {losses}.")
 
 def main():
-    name, count_wins, count_losses, num_games = prompt_name()
+    name= prompt_name()
     ran_number = random_number()
-    wins, losses, games = more_guesses(ran_number, name, count_wins, count_losses, num_games)
-    run_again(ran_number, name, count_wins,count_losses, games, wins, losses, games)
+    more_guesses(ran_number, name)
+    run_again(ran_number, name)
 
 main()
