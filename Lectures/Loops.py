@@ -31,5 +31,4 @@ def main():
     prime, divisor = is_prime(n)
     print_result(prime, n, divisor)
 
-
 main()

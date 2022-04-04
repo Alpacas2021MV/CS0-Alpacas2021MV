@@ -34,13 +34,15 @@ def random_number():
 def more_guesses(ran_number, name):
     count_wins = 0
     count_losses = 0
+    games = 0
     for i in range(6):
+        games += 1
         guess = int(input("Take a guess: "))
         #Step 3a
         if guess == ran_number:
             print(f"Congratulations {name}! You won")
             print(f"You guessed the number in {i+1} attempt(s)")
-            count_wins + 1
+            count_wins += 1
             break
         #Step 4
         else:
@@ -53,11 +55,11 @@ def more_guesses(ran_number, name):
     if guess != ran_number:
         #Step 5
         print(f"Game over :( , You lose. The number was {ran_number}.")
-        count_losses + 1
-    return guess, count_wins, count_losses 
+        count_losses += 1
+    return count_wins, count_losses, games 
 
 #Step 6
-def run_again(ran_number, name, count_wins, count_losses): 
+def run_again(ran_number, name, count_wins, count_losses, games):
     keeprunning = True
     while(keeprunning):
         runagain = input("Do you want to play again [Y/N]?")
@@ -65,21 +67,23 @@ def run_again(ran_number, name, count_wins, count_losses):
             print("Ok, lets play again!")
             random_number()
             more_guesses(ran_number, name)
-            run_again(ran_number, name, count_wins, count_losses)
+            run_again(ran_number, name, count_wins, count_losses, games)
             break
         else:
             print("Thank you for playing!")
-            stats(count_wins, count_losses)
+            stats(count_wins, count_losses, games)
             keeprunning = False
 
-def stats(count_wins, count_losses): 
+#Step 7 
+def stats(count_wins, count_losses, games): 
+    print(f"You played {games} time(s) today!")
     print(f"Wins: {count_wins}")
     print(f"Losses: {count_losses}")
 
 def main():
     name = prompt_name()
     ran_number = random_number()
-    count_wins, count_losses = more_guesses(ran_number, name)
-    run_again(ran_number, name, count_wins, count_losses)
+    count_wins, count_losses, games= more_guesses(ran_number, name)
+    run_again(ran_number, name, count_wins,count_losses, games)
 
 main()
