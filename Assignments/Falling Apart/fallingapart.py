@@ -10,11 +10,24 @@ def my_input():
     for i in range(len(my_string.split)):
         my_nums.append(int(my_string.split[i]))
         my_nums.sort(reverse = True)
-        
+        #Should now be [2, 2, 1, 1] (Greatest to Smallest)
+    return my_nums, i
 
+def my_output(my_nums, i):
+    A = 0
+    B = 0
+    for A in my_nums:
+        my_nums[i]
+    for B in my_nums:
+        my_nums[i+1]
+
+    print(A)
+    print(B)
 
 def main():
-    pass
+    my_input()
+    my_output()
+
 
 
 
