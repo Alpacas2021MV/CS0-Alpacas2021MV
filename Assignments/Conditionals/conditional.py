@@ -47,6 +47,7 @@ def mini(num1, num2, num3, num4, num5):
     for number in numbers[0:]:
         if number < min_value:
             min_value = number
+            
     return min_value
 
 #Step 6
