@@ -33,3 +33,10 @@ the max function.
 - Program has been tested mulitple times 
 - Grade 105/100, because I met all the requirements. I figured out half of the bonus step where the game can keep going as long 
 as the player wants. I couldn't figure out the stats after the player quits. I will try to figure it out later (obviously not for the grade) 
+
+## Falling Apart Problem
+- Program has been accepted by kattis
+- https://user-images.githubusercontent.com/98496814/165140484-becaa81a-34c7-423e-88e7-de69d553dbf5.png
+- wrote three test cases and they passed
+- readme is up to date
+- Grade: 90/100 because the solution was accepted and the screenshot is above. Test cases should work since it returns "All test cases passed" but there could be a bug. 
