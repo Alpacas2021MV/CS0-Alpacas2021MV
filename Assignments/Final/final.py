@@ -66,8 +66,30 @@ def game_sense(rand_word):
             else: 
                 print("Please look at your guess. It could be entered wrong!")
 
-    
-    
+        elif len(guess) == len(secret):
+            if guess == secret: 
+                print(f"You are Correct!!! You guessed the word")
+                guessed = True
+                break 
+            else: 
+                print(f"You are incorrect :( ")
+                guesses -= 1 
+            
+        stat = ""
+        if guessed == False: 
+            for letter in secret: 
+                if letter in player_word:
+                    stat += letter 
+                else: 
+                    stat += "_"
+            print(stat)
+
+        if stat == secret: 
+            print(f"You are correct!!! You guessed the word")   
+            guessed = True 
+            break
+        elif guesses == 0: 
+            print(f"You lose, you man got hanged :( ")
     #for i in range(len(secret)):
     #    if guess.upper() == secret: 
 
