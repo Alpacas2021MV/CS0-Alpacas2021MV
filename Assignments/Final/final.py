@@ -11,12 +11,8 @@ Step 4: Ask player to guess the world one character at a time
 Step 5: At the end, tell player whether they won or lost 
 Step 6: Ask player if they want to play again
 '''
-from dis import dis
 import random
-import time 
-
-def tests(): 
-    pass 
+import time  
 #Step 1
 def random_word():
     input_lines = ''
@@ -42,7 +38,6 @@ def game_sense(rand_word):
     secret = rand_word
     print(secret)
 
-    len(secret)
     guesses = 6
     player_word = [] 
     guessed = False 
@@ -57,12 +52,10 @@ def game_sense(rand_word):
             elif guess not in secret: 
                 print(f"Incorrect, that guess is not part of the word!")
                 guesses -= 1
-                print(player_word)
             elif guess in secret: 
                 print(f"Correct, you guessed part of the word!")
                 player_word.append(guess)
                 player_word.sort
-                print(player_word)
             else: 
                 print("Please look at your guess. It could be entered wrong!")
 
@@ -74,34 +67,69 @@ def game_sense(rand_word):
             else: 
                 print(f"You are incorrect :( ")
                 guesses -= 1 
-            
-        stat = ""
+        #else: 
+        #   print(f"Incorrect, length of guess doesn't equal the word") 
+
+        display = ""
         if guessed == False: 
             for letter in secret: 
                 if letter in player_word:
-                    stat += letter 
+                    display += letter 
                 else: 
-                    stat += "_"
-            print(stat)
+                    display += "_"
+            print(display)
 
-        if stat == secret: 
+        #Step 5
+        if display == secret: 
             print(f"You are correct!!! You guessed the word")   
             guessed = True 
             break
         elif guesses == 0: 
-            print(f"You lose, you man got hanged :( ")
-    #for i in range(len(secret)):
-    #    if guess.upper() == secret: 
+            print(f"You lose, your man got hanged :( ")
 
+def stages(): 
+    stage_num = 0 
+    print(f"Stage {stage_num}")
+    print("|__________\n|/     |\n|\n|\n|\n|\n|\n-------------\n")
 
+    #Stage 1
+    stage_num += 1 
+    print(f"Stage {stage_num}")
+    print("|__________\n|/     |\n|      O\n|\n|\n|\n|\n-------------\n")
+
+    #Stage 2
+    stage_num += 1 
+    print(f"Stage {stage_num}")
+    print("|__________\n|/     |\n|      O\n|      |\n|      |\n|\n|\n-------------\n")
+
+    #Stage 3 
+    stage_num += 1 
+    print(f"Stage {stage_num}")
+    print("|__________\n|/     |\n|      O\n|     \\|\n|      | \n|\n|\n-------------\n")    
+
+    #Stage 4 
+    stage_num += 1 
+    print(f"Stage {stage_num}")
+    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \n|\n|\n-------------\n")  
+
+    #Stage 5
+    stage_num += 1 
+    print(f"Stage {stage_num}")
+    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \\\n|\n|\n-------------\n")  
+
+    #Stage 6 
+    stage_num += 1 
+    print(f"Stage {stage_num}")
+    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|     / \\\n|\n-------------\n")      
 #Step 6
-def run_again():
+def run_again(rand_word):
     keeprunning = True
     while(keeprunning):
         runagain = input("Do you want to play again [Y/N]? ")
         if (runagain.lower() == 'y' or runagain.lower() == 'yes'):
             print("Ok, lets play again!")
-            main()
+            random_word()
+            game_sense(rand_word)
             break
         else:
             print("Thank you for playing")
@@ -114,7 +142,9 @@ def main():
     time.sleep(2)
 
     game_sense(rand_word)
-    run_again()
+    stages()
+    time.sleep(2)
+    run_again(rand_word)
 
 if __name__ == "__main__":
     main()
