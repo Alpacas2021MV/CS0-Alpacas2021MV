@@ -11,8 +11,9 @@ Step 4: Ask player to guess the world one character at a time
 Step 5: At the end, tell player whether they won or lost 
 Step 6: Ask player if they want to play again
 '''
-import sys
+from dis import dis
 import random
+import time 
 
 def tests(): 
     pass 
@@ -26,7 +27,7 @@ def random_word():
     my_string = input_lines.split()
     rand_word = random.choice(my_string)
     "Here is where the word is put in a list and is separated" 
-    rand_word = list(rand_word.lower())
+    rand_word = list(rand_word.upper())
     return rand_word
 
 #Step 3
@@ -38,19 +39,39 @@ def prompt_name():
 
 #Step 4
 def game_sense(rand_word):
-    target_word = rand_word
-    #Beginning of the Game 
-    print("|__________") 						
-    print("|/    |") 
-    print("|") 	
-    print("|")
-    print("|") 	
-    print("|")
-    print("|") 				              
-    print("-------------") 
-    print(f"Your Guess (One letter at a time): ")
-    print(target_word)
-     
+    secret = rand_word
+    print(secret)
+
+    len(secret)
+    guesses = 6
+    player_word = [] 
+    guessed = False 
+    print()
+
+    #Got this code from https://mardiyyah.medium.com/a-simple-hangman-learnpythonthroughprojects-series-10-fedda58741b 
+    while guessed == False and guesses > 0: 
+        guess = input(f"Ready? Please enter a letter or word: ").upper()
+        if len(guess) == 1: 
+            if guess in player_word:    
+                print("You already guessed that letter. Try a different letter: ")
+            elif guess not in secret: 
+                print(f"Incorrect, that guess is not part of the word!")
+                guesses -= 1
+                print(player_word)
+            elif guess in secret: 
+                print(f"Correct, you guessed part of the word!")
+                player_word.append(guess)
+                player_word.sort
+                print(player_word)
+            else: 
+                print("Please look at your guess. It could be entered wrong!")
+
+    
+    
+    #for i in range(len(secret)):
+    #    if guess.upper() == secret: 
+
+
 #Step 6
 def run_again():
     keeprunning = True
@@ -67,11 +88,11 @@ def run_again():
 def main(): 
     name = prompt_name()
     rand_word = random_word()
+    print(f"Welcome {name}")
+    time.sleep(2)
+
     game_sense(rand_word)
     run_again()
 
 if __name__ == "__main__":
-    if (len(sys.argv) == 2 and sys.argv[1] == "test"):
-        tests()
-    else:
-        main()
+    main()
