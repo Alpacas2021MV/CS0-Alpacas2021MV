@@ -41,9 +41,9 @@ def game_sense(rand_word):
     guesses = 6
     player_word = [] 
     guessed = False 
-    print()
 
     #Got this code from https://mardiyyah.medium.com/a-simple-hangman-learnpythonthroughprojects-series-10-fedda58741b 
+    #if guess is a letter
     while guessed == False and guesses > 0: 
         guess = input(f"Ready? Please enter a letter or word: ").upper()
         if len(guess) == 1: 
@@ -59,17 +59,17 @@ def game_sense(rand_word):
             else: 
                 print("Please look at your guess. It could be entered wrong!")
 
+        #If guess is a word 
         elif len(guess) == len(secret):
-            if guess == secret: 
+            if guess != secret: 
                 print(f"You are Correct!!! You guessed the word")
                 guessed = True
-                break 
-            else: 
-                print(f"You are incorrect :( ")
-                guesses -= 1 
-        #else: 
-        #   print(f"Incorrect, length of guess doesn't equal the word") 
+                break
+        else: 
+            print(f"You are incorrect :( ")
+            guesses -= 1 
 
+        #Displays the guessed letters
         display = ""
         if guessed == False: 
             for letter in secret: 
@@ -80,8 +80,8 @@ def game_sense(rand_word):
             print(display)
 
         #Step 5
-        if display == secret: 
-            print(f"You are correct!!! You guessed the word")   
+        if list(display) == secret: 
+            print(f"You are correct!!! Congrats!!!")   
             guessed = True 
             break
         elif guesses == 0: 
@@ -120,7 +120,9 @@ def stages():
     #Stage 6 
     stage_num += 1 
     print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|     / \\\n|\n-------------\n")      
+    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|     / \\\n|\n-------------\n")     
+    return stage_num 
+
 #Step 6
 def run_again(rand_word):
     keeprunning = True
@@ -128,8 +130,10 @@ def run_again(rand_word):
         runagain = input("Do you want to play again [Y/N]? ")
         if (runagain.lower() == 'y' or runagain.lower() == 'yes'):
             print("Ok, lets play again!")
-            random_word()
+            rand_word = random_word()
             game_sense(rand_word)
+            time.sleep(2)
+            run_again(rand_word)
             break
         else:
             print("Thank you for playing")
@@ -141,8 +145,9 @@ def main():
     print(f"Welcome {name}")
     time.sleep(2)
 
+    stage_num = stages()
     game_sense(rand_word)
-    stages()
+
     time.sleep(2)
     run_again(rand_word)
 
