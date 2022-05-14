@@ -34,14 +34,14 @@ def prompt_name():
     return name
 
 #Step 4
-def game_sense(rand_word):
+def game_sense(rand_word, stage_num):
     secret = rand_word
     print(secret)
 
     guesses = 6
     player_word = [] 
     guessed = False 
-
+    print(stage_num)
     #Got this code from https://mardiyyah.medium.com/a-simple-hangman-learnpythonthroughprojects-series-10-fedda58741b 
     #if guess is a letter
     while guessed == False and guesses > 0: 
@@ -62,7 +62,7 @@ def game_sense(rand_word):
         #If guess is a word 
         elif len(guess) == len(secret):
             if guess != secret: 
-                print(f"You are Correct!!! You guessed the word")
+                print(f"You are Correct!!! You WIN!!!")
                 guessed = True
                 break
         else: 
@@ -81,7 +81,7 @@ def game_sense(rand_word):
 
         #Step 5
         if list(display) == secret: 
-            print(f"You are correct!!! Congrats!!!")   
+            print(f"You are correct!!! Congrats!!! You WIN!")   
             guessed = True 
             break
         elif guesses == 0: 
@@ -89,51 +89,48 @@ def game_sense(rand_word):
 
 def stages(): 
     stage_num = 0 
-    print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|\n|\n|\n|\n|\n-------------\n")
+    if stage_num == 0: 
+        print("|__________\n|/     |\n|\n|\n|\n|\n|\n-------------\n")
+    elif stage_num == 1:
+        print("|__________\n|/     |\n|      O\n|\n|\n|\n|\n-------------\n")
+    elif stage_num == 2: 
+        print("|__________\n|/     |\n|      O\n|      |\n|      |\n|\n|\n-------------\n")
+    elif stage_num == 3: 
+        print("|__________\n|/     |\n|      O\n|     \\|\n|      | \n|\n|\n-------------\n")
+    elif stage_num == 4: 
+        print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \n|\n|\n-------------\n")
+    elif stage_num == 5: 
+        print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \\\n|\n|\n-------------\n")
+    elif stage_num == 6: 
+        print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|     / \\\n|\n-------------\n")
+    return stage_num
 
+    #stage_0 = print("|__________\n|/     |\n|\n|\n|\n|\n|\n-------------\n")
     #Stage 1
-    stage_num += 1 
-    print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|      O\n|\n|\n|\n|\n-------------\n")
-
+    #stage_1 = print("|__________\n|/     |\n|      O\n|\n|\n|\n|\n-------------\n")
     #Stage 2
-    stage_num += 1 
-    print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|      O\n|      |\n|      |\n|\n|\n-------------\n")
-
+    #stage_2 = print("|__________\n|/     |\n|      O\n|      |\n|      |\n|\n|\n-------------\n")
     #Stage 3 
-    stage_num += 1 
-    print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|      O\n|     \\|\n|      | \n|\n|\n-------------\n")    
-
+    #stage_3 = print("|__________\n|/     |\n|      O\n|     \\|\n|      | \n|\n|\n-------------\n")    
     #Stage 4 
-    stage_num += 1 
-    print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \n|\n|\n-------------\n")  
-
+    #stage_4 = print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \n|\n|\n-------------\n")  
     #Stage 5
-    stage_num += 1 
-    print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \\\n|\n|\n-------------\n")  
-
+    #stage_5 = print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|       \\\n|\n|\n-------------\n")  
     #Stage 6 
-    stage_num += 1 
-    print(f"Stage {stage_num}")
-    print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|     / \\\n|\n-------------\n")     
-    return stage_num 
+    #stage_6 = print("|__________\n|/     |\n|      O\n|     \\|/\n|      |\n|     / \\\n|\n-------------\n")      
 
 #Step 6
-def run_again(rand_word):
+def run_again(rand_word, stage_num):
     keeprunning = True
     while(keeprunning):
         runagain = input("Do you want to play again [Y/N]? ")
         if (runagain.lower() == 'y' or runagain.lower() == 'yes'):
             print("Ok, lets play again!")
             rand_word = random_word()
-            game_sense(rand_word)
+            stage_num = stages()
+            game_sense(rand_word, stage_num)
             time.sleep(2)
-            run_again(rand_word)
+            run_again(rand_word, stage_num)
             break
         else:
             print("Thank you for playing")
@@ -146,10 +143,10 @@ def main():
     time.sleep(2)
 
     stage_num = stages()
-    game_sense(rand_word)
+    game_sense(rand_word, stage_num)
 
     time.sleep(2)
-    run_again(rand_word)
+    run_again(rand_word, stage_num)
 
 if __name__ == "__main__":
     main()
