@@ -73,6 +73,15 @@ def game_sense(rand_word):
         elif len(guess) == len(secret):
             if guess != secret: 
                 print(f"You are Correct!!! You WIN!!!")
+                time.sleep(1)
+                #Drawings came from and inspired by https://www.asciiart.eu/sports-and-outdoors/soccer 
+                print("      ______ ")
+                print("     (  ()  )")
+                print("      \\    /")
+                print("       |  | ")
+                print("       |  | ")
+                print("      [____]")
+                print("THE TROPHY IS YOURS!!!  ")
                 guessed = True
                 break
         else: 
@@ -96,10 +105,21 @@ def game_sense(rand_word):
             print(f"You are correct!!! Congrats!!! You WIN!")   
             guessed = True 
             stages(stage_num)
+            time.sleep(1)
+
+            print("      ______ ")
+            print("     (  ()  )")
+            print("      \\    /")
+            print("       |  | ")
+            print("       |  | ")
+            print("      [____]")
+            print("THE TROPHY IS YOURS!!!  ")
             break
         elif guesses == 0: 
-            print(f"You lose, your man got hanged :( ")
+            print(f"You lose, your mananger got hanged :( ")
+            print(f"The team was {rand_word}")
             stages(stage_num)
+
 
 def stages(stage_num):  
     if stage_num == 0: 
@@ -136,6 +156,10 @@ def run_again(rand_word):
             keeprunning = False
 
 def main(): 
+    print("                       ____")
+    print(" O__        O __      |    |\\")
+    print("/|          /\\        |    |X\\")
+    print("/ > o        <\\       |    |XX\\")
     name = prompt_name()
     rand_word = random_word()
     print(f"Welcome {name}")

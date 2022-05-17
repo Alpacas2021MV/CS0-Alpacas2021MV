@@ -40,3 +40,9 @@ as the player wants. I couldn't figure out the stats after the player quits. I w
 - wrote three test cases and they passed
 - readme is up to date
 - Grade: 90/100 because the solution was accepted and the screenshot is above. Test cases should work since it returns "All test cases passed" but there could be a bug. 
+
+## Final Project 
+- Program works and runs good 
+- All requirements are met and completed
+- Program has been tested many times 
+- Grade: 100/100, because I met all the requirements and the game works well. 
